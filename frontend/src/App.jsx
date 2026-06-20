@@ -1,5 +1,6 @@
 import "./App.css";
 import conditions from "./data/conditions";
+import ConditionCard from "./components/ConditionCard";
 
 function App() {
   return (
@@ -10,11 +11,7 @@ function App() {
       <h2>Today's Conditions</h2>
 
       {conditions.map((condition) => (
-        <div key={condition.id}>
-          <p>
-            {condition.resort} - {condition.newSnow}" New Snow
-          </p>
-        </div>
+        <ConditionCard key={condition.id} condition={condition} />
       ))}
     </>
   );
