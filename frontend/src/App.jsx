@@ -4,16 +4,21 @@ import ConditionCard from "./components/ConditionCard";
 
 function App() {
   return (
-    <>
-      <h1>Sip n' Shred</h1>
-      <p>Compare Utah ski resorts, conditions, and après-ski spots.</p>
+    <main className="app">
+      <header className="app-header">
+        <h1>Sip n' Shred</h1>
 
-      <h2>Today's Conditions</h2>
+        <p>Compare Utah ski resorts, conditions, and après-ski spots.</p>
+      </header>
 
-      {conditions.map((condition) => (
-        <ConditionCard key={condition.id} condition={condition} />
-      ))}
-    </>
+      <section>
+        <h2>Today's Conditions</h2>
+
+        {conditions.map((condition) => (
+          <ConditionCard key={condition.id} condition={condition} />
+        ))}
+      </section>
+    </main>
   );
 }
 
