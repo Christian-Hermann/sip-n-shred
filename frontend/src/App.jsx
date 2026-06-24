@@ -1,6 +1,7 @@
 import "./App.css";
 import conditions from "./data/conditions";
 import ConditionCard from "./components/ConditionCard";
+import ConditionsList from "./components/ConditionsList";
 
 function App() {
   return (
@@ -14,9 +15,7 @@ function App() {
       <section>
         <h2>Today's Conditions</h2>
 
-        {conditions.map((condition) => (
-          <ConditionCard key={condition.id} condition={condition} />
-        ))}
+        <ConditionsList conditions={conditions} />
       </section>
     </main>
   );
