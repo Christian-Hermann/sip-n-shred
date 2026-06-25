@@ -1,21 +1,21 @@
-function ComparisonSection({ conditions }) {
+function ComparisonSection({ resorts }) {
   return (
-    <sections>
+    <section>
       <h2>Compare Resorts</h2>
 
       <div>
-        {conditions.map((condition) => (
-          <div key={condition.id}>
-            <h3>{condition.resort}</h3>
-            <p>{condition.newSnow}" New Snow</p>
-            <p>Difficulty: {condition.difficulty}</p>
-            <p>Best For: {condition.bestFor}</p>
-            <p>From SLC Airport: {condition.driveFromAirport} min</p>
-            <p>Après Rating: {condition.apresRating}/10</p>
+        {resorts.map((resort) => (
+          <div key={resort.id}>
+            <h3>{resort.name}</h3>
+            <p>{resort.newSnow}" New Snow</p>
+            <p>Difficulty: {resort.difficulty}</p>
+            <p>Best For: {resort.bestFor}</p>
+            <p>From SLC Airport: {resort.driveFromAirport} min</p>
+            <p>Après Rating: {resort.apresRating}/10</p>
           </div>
         ))}
       </div>
-    </sections>
+    </section>
   );
 }
 

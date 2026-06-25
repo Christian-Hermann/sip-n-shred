@@ -1,6 +1,6 @@
 import "./App.css";
-import conditions from "./data/conditions";
-import ConditionsList from "./components/ConditionsList";
+import resorts from "./data/resorts";
+import ResortList from "./components/ResortList";
 import ComparisonSection from "./components/ComparisonSection";
 
 function App() {
@@ -14,10 +14,10 @@ function App() {
 
       <section>
         <h2>Today's Conditions</h2>
-
-        <ConditionsList conditions={conditions} />
-        <ComparisonSection conditions={conditions} />
+        <ResortList resorts={resorts} />
       </section>
+
+      <ComparisonSection resorts={resorts} />
     </main>
   );
 }

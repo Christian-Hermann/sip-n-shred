@@ -1,4 +1,4 @@
-.condition-card {
+.resort-card {
   background-color: white;
   border: 1px solid #d3d3d3;
   border-radius: 8px;
@@ -7,14 +7,14 @@
   text-align: center;
 }
 
-.condition-card h3 {
+.resort-card h3 {
   margin: 0 0 1rem 0;
 }
 
-.condition-card p {
+.resort-card p {
   margin: 0.5rem 0;
 }
 
-.condition-card p:last-child {
+.resort-card p:last-child {
   margin-bottom: 0;
 }

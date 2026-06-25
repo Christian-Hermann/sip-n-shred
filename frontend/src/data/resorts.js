@@ -1,7 +1,7 @@
-const conditions = [
+const resorts = [
   {
     id: 1,
-    resort: "Park City",
+    name: "Park City",
     newSnow: 8,
     difficulty: "Intermediate",
     bestFor: "Families",
@@ -10,7 +10,7 @@ const conditions = [
   },
   {
     id: 2,
-    resort: "Deer Valley",
+    name: "Deer Valley",
     newSnow: 8,
     difficulty: "Intermediate",
     bestFor: "Luxury",
@@ -19,7 +19,7 @@ const conditions = [
   },
   {
     id: 3,
-    resort: "Snowbird",
+    name: "Snowbird",
     newSnow: 10,
     difficulty: "Advanced",
     bestFor: "Experts",
@@ -28,7 +28,7 @@ const conditions = [
   },
   {
     id: 4,
-    resort: "Powder Mountain",
+    name: "Powder Mountain",
     newSnow: 15,
     difficulty: "Intermediate",
     bestFor: "Powder",
@@ -37,7 +37,7 @@ const conditions = [
   },
   {
     id: 5,
-    resort: "Sundance",
+    name: "Sundance",
     newSnow: 8,
     difficulty: "Beginner",
     bestFor: "Scenery",
@@ -46,4 +46,4 @@ const conditions = [
   },
 ];
 
-export default conditions;
+export default resorts;
