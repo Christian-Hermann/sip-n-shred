@@ -17,8 +17,8 @@ function ConditionCard({ condition }) {
       </p>
 
       <p>
-        <strong>DriveTime: </strong>
-        {condition.driveTime} min
+        <strong>From SLC Airport: </strong>
+        {condition.driveFromAirport} min
       </p>
 
       <p>

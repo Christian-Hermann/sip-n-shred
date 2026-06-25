@@ -5,7 +5,7 @@ const conditions = [
     newSnow: 8,
     difficulty: "Intermediate",
     bestFor: "Families",
-    driveTime: 45,
+    driveFromAirport: 45,
     apresRating: 9,
   },
   {
@@ -14,7 +14,7 @@ const conditions = [
     newSnow: 8,
     difficulty: "Intermediate",
     bestFor: "Luxury",
-    driveTime: 45,
+    driveFromAirport: 45,
     apresRating: 8,
   },
   {
@@ -23,7 +23,7 @@ const conditions = [
     newSnow: 10,
     difficulty: "Advanced",
     bestFor: "Experts",
-    driveTime: 25,
+    driveFromAirport: 25,
     apresRating: 5,
   },
   {
@@ -32,7 +32,7 @@ const conditions = [
     newSnow: 15,
     difficulty: "Intermediate",
     bestFor: "Powder",
-    driveTime: 90,
+    driveFromAirport: 90,
     apresRating: 2,
   },
   {
@@ -41,7 +41,7 @@ const conditions = [
     newSnow: 8,
     difficulty: "Beginner",
     bestFor: "Scenery",
-    driveTime: 60,
+    driveFromAirport: 60,
     apresRating: 2,
   },
 ];

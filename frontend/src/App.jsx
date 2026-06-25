@@ -1,7 +1,7 @@
 import "./App.css";
 import conditions from "./data/conditions";
-import ConditionCard from "./components/ConditionCard";
 import ConditionsList from "./components/ConditionsList";
+import ComparisonSection from "./components/ComparisonSection";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <h2>Today's Conditions</h2>
 
         <ConditionsList conditions={conditions} />
+        <ComparisonSection conditions={conditions} />
       </section>
     </main>
   );
