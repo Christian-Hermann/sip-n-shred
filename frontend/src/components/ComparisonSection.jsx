@@ -41,6 +41,10 @@ function ComparisonSection({ resorts }) {
           <p>Difficulty: {firstResort.difficulty}</p>
           <p>Best For: {firstResort.bestFor}</p>
           <p>From SLC Airport: {firstResort.driveFromAirport} min</p>
+          <p>
+            Terrain Park:{" "}
+            {firstResort.hasTerrainPark ? "Open Today" : "Closed Today"}
+          </p>
           <p>Après Rating: {firstResort.apresRating}/10</p>
         </div>
         <div>
@@ -49,6 +53,10 @@ function ComparisonSection({ resorts }) {
           <p>Difficulty: {secondResort.difficulty}</p>
           <p>Best For: {secondResort.bestFor}</p>
           <p>From SLC Airport: {secondResort.driveFromAirport} min</p>
+          <p>
+            Terrain Park:{" "}
+            {secondResort.hasTerrainPark ? "Open Today" : "Closed Today"}
+          </p>
           <p>Après Rating: {secondResort.apresRating}/10</p>
         </div>
       </div>

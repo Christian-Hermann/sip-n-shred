@@ -22,6 +22,11 @@ function ResortCard({ resort }) {
       </p>
 
       <p>
+        <strong>Terrain Park: </strong>
+        {resort.hasTerrainPark ? "Open Today" : "Closed Today"}
+      </p>
+
+      <p>
         <strong>Après Rating: </strong>
         {resort.apresRating}/10
       </p>
