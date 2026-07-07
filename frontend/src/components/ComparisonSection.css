@@ -1,0 +1,32 @@
+.comparison-selects {
+  margin-bottom: 1rem;
+}
+
+.comparison-selects {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.comparison-selects select {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #777;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.comparison-results {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.comparison-results > div {
+  flex: 1;
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
