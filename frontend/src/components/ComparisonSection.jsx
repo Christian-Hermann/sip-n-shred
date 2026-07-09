@@ -35,29 +35,46 @@ function ComparisonSection({ resorts }) {
       </div>
 
       <div className="comparison-results">
-        <div>
+        <div className="comparison-header">
+          <div></div>
           <h3>{firstResort.name}</h3>
-          <p>{firstResort.newSnow}" New Snow</p>
-          <p>Difficulty: {firstResort.difficulty}</p>
-          <p>Best For: {firstResort.bestFor}</p>
-          <p>From SLC Airport: {firstResort.driveFromAirport} min</p>
-          <p>
-            Terrain Park:{" "}
-            {firstResort.hasTerrainPark ? "Open Today" : "Closed Today"}
-          </p>
-          <p>Après Rating: {firstResort.apresRating}/10</p>
-        </div>
-        <div>
           <h3>{secondResort.name}</h3>
-          <p>{secondResort.newSnow}" New Snow</p>
-          <p>Difficulty: {secondResort.difficulty}</p>
-          <p>Best For: {secondResort.bestFor}</p>
-          <p>From SLC Airport: {secondResort.driveFromAirport} min</p>
-          <p>
-            Terrain Park:{" "}
-            {secondResort.hasTerrainPark ? "Open Today" : "Closed Today"}
-          </p>
-          <p>Après Rating: {secondResort.apresRating}/10</p>
+        </div>
+
+        <div className={"comparison-row"}>
+          <strong>New Snow</strong>
+          <span>{firstResort.newSnow}"</span>
+          <span>{secondResort.newSnow}"</span>
+        </div>
+
+        <div className="comparison-row">
+          <strong>Difficulty</strong>
+          <span>{firstResort.difficulty}</span>
+          <span>{secondResort.difficulty}</span>
+        </div>
+
+        <div className="comparison-row">
+          <strong>Best For</strong>
+          <span>{firstResort.bestFor}</span>
+          <span>{secondResort.bestFor}</span>
+        </div>
+
+        <div className="comparison-row">
+          <strong>Terrain Park</strong>
+          <span>{firstResort.hasTerrainPark ? "Yes" : "No"}</span>
+          <span>{secondResort.hasTerrainPark ? "Yes" : "No"}</span>
+        </div>
+
+        <div className="comparison-row">
+          <strong>From SLC Airport</strong>
+          <span>{firstResort.driveFromAirport} min</span>
+          <span>{secondResort.driveFromAirport} min</span>
+        </div>
+
+        <div className="comparison-row">
+          <strong>Après Rating</strong>
+          <span>{firstResort.apresRating}/10</span>
+          <span>{secondResort.apresRating}/10</span>
         </div>
       </div>
     </section>
