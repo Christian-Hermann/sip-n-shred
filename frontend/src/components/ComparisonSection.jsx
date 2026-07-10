@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ComparisonSection.css";
+import ComparisonRow from "./ComparisonRow";
 
 function ComparisonSection({ resorts }) {
   const [firstResortId, setFirstResortId] = useState(1);
@@ -41,41 +42,41 @@ function ComparisonSection({ resorts }) {
           <h3>{secondResort.name}</h3>
         </div>
 
-        <div className={"comparison-row"}>
-          <strong>New Snow</strong>
-          <span>{firstResort.newSnow}"</span>
-          <span>{secondResort.newSnow}"</span>
-        </div>
+        <ComparisonRow
+          label="New Snow"
+          firstValue={`${firstResort.newSnow}"`}
+          secondValue={`${secondResort.newSnow}"`}
+        />
 
-        <div className="comparison-row">
-          <strong>Difficulty</strong>
-          <span>{firstResort.difficulty}</span>
-          <span>{secondResort.difficulty}</span>
-        </div>
+        <ComparisonRow
+          label="Difficulty"
+          firstValue={firstResort.difficulty}
+          secondValue={secondResort.difficulty}
+        />
 
-        <div className="comparison-row">
-          <strong>Best For</strong>
-          <span>{firstResort.bestFor}</span>
-          <span>{secondResort.bestFor}</span>
-        </div>
+        <ComparisonRow
+          label="Best For"
+          firstValue={firstResort.bestFor}
+          secondValue={secondResort.bestFor}
+        />
 
-        <div className="comparison-row">
-          <strong>Terrain Park</strong>
-          <span>{firstResort.hasTerrainPark ? "Yes" : "No"}</span>
-          <span>{secondResort.hasTerrainPark ? "Yes" : "No"}</span>
-        </div>
+        <ComparisonRow
+          label="Terrain Park"
+          firstValue={firstResort.hasTerrainPark ? "Yes" : "No"}
+          secondValue={secondResort.hasTerrainPark ? "Yes" : "No"}
+        />
 
-        <div className="comparison-row">
-          <strong>From SLC Airport</strong>
-          <span>{firstResort.driveFromAirport} min</span>
-          <span>{secondResort.driveFromAirport} min</span>
-        </div>
+        <ComparisonRow
+          label="From SLC Airport"
+          firstValue={firstResort.driveFromAirport}
+          secondValue={secondResort.driveFromAirport}
+        />
 
-        <div className="comparison-row">
-          <strong>Après Rating</strong>
-          <span>{firstResort.apresRating}/10</span>
-          <span>{secondResort.apresRating}/10</span>
-        </div>
+        <ComparisonRow
+          label="Après Rating"
+          firstValue={`${firstResort.apresRating}/10`}
+          secondValue={`${secondResort.apresRating}/10`}
+        />
       </div>
     </section>
   );
