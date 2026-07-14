@@ -15,6 +15,9 @@ function App() {
   if (sortOption === "snow") {
     sortedResorts.sort((a, b) => b.newSnow - a.newSnow);
   }
+  if (sortOption === "airport") {
+    sortedResorts.sort((a, b) => a.driveFromAirport - b.driveFromAirport);
+  }
 
   return (
     <main className="app">
@@ -47,6 +50,7 @@ function App() {
         >
           <option value="">Defaul Order</option>
           <option value="snow">Most new snow</option>
+          <option value="airport">Closest to Airport</option>
         </select>
 
         <ResortList resorts={sortedResorts} />
