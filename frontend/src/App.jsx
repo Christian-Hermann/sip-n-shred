@@ -18,6 +18,9 @@ function App() {
   if (sortOption === "airport") {
     sortedResorts.sort((a, b) => a.driveFromAirport - b.driveFromAirport);
   }
+  if (sortOption === "alphabetical") {
+    sortedResorts.sort((a, b) => a.name.localeCompare(b.name));
+  }
 
   return (
     <main className="app">
@@ -51,6 +54,7 @@ function App() {
           <option value="">Defaul Order</option>
           <option value="snow">Most new snow</option>
           <option value="airport">Closest to Airport</option>
+          <option value="alphabetical">A - Z</option>
         </select>
 
         <ResortList resorts={sortedResorts} />
