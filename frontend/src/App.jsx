@@ -7,10 +7,18 @@ import { useState } from "react";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
+  const [filterOption, setFilterOption] = useState("all");
 
-  const filteredResorts = resorts.filter((resort) =>
-    resort.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredResorts = resorts.filter((resort) => {
+    const matchesSearch = resort.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    const matchesFilter = filterOption === "all" || resort.hasTerrainPark;
+
+    return matchesSearch && matchesFilter;
+  });
+
   const sortedResorts = [...filteredResorts];
   if (sortOption === "snow") {
     sortedResorts.sort((a, b) => b.newSnow - a.newSnow);
@@ -55,6 +63,14 @@ function App() {
           <option value="snow">Most new snow</option>
           <option value="airport">Closest to Airport</option>
           <option value="alphabetical">A - Z</option>
+        </select>
+
+        <select
+          value={filterOption}
+          onChange={(event) => setFilterOption(event.target.value)}
+        >
+          <option value="all">All Resorts</option>
+          <option value="terrainPark">Terrain Parks Only</option>
         </select>
 
         <ResortList resorts={sortedResorts} />
