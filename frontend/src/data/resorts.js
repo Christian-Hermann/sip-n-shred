@@ -26,7 +26,7 @@ const resorts = [
     // Snow & skiing
     name: "Deer Valley",
     newSnow: 8,
-    difficulty: "Intermediate",
+    difficulty: "Advanced",
     bestFor: "Luxury",
     driveFromAirport: 45,
     hasTerrainPark: false,
@@ -45,8 +45,8 @@ const resorts = [
     // Snow & Skiing
     name: "Snowbird",
     newSnow: 10,
-    difficulty: "Advanced",
-    bestFor: "Experts",
+    difficulty: "Expert",
+    bestFor: "Mountain peaks",
     driveFromAirport: 25,
     hasTerrainPark: false,
 

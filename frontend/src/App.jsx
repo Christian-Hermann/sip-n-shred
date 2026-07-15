@@ -14,7 +14,10 @@ function App() {
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
 
-    const matchesFilter = filterOption === "all" || resort.hasTerrainPark;
+    const matchesFilter =
+      filterOption === "all" ||
+      (filterOption === "terrainPark" && resort.hasTerrainPark) ||
+      resort.difficulty.toLowerCase() === filterOption;
 
     return matchesSearch && matchesFilter;
   });
@@ -56,6 +59,18 @@ function App() {
         />
 
         <select
+          value={filterOption}
+          onChange={(event) => setFilterOption(event.target.value)}
+        >
+          <option value="all">All Resorts</option>
+          <option value="terrainPark">Terrain Parks Only</option>
+          <option value="beginner">Beginner Friendly</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+          <option value="expert">Expert</option>
+        </select>
+
+        <select
           value={sortOption}
           onChange={(event) => setSortOption(event.target.value)}
         >
@@ -63,14 +78,6 @@ function App() {
           <option value="snow">Most new snow</option>
           <option value="airport">Closest to Airport</option>
           <option value="alphabetical">A - Z</option>
-        </select>
-
-        <select
-          value={filterOption}
-          onChange={(event) => setFilterOption(event.target.value)}
-        >
-          <option value="all">All Resorts</option>
-          <option value="terrainPark">Terrain Parks Only</option>
         </select>
 
         <ResortList resorts={sortedResorts} />
