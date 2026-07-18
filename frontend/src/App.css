@@ -34,3 +34,37 @@
     font-size: 2.25rem;
   }
 }
+
+.conditions-section h2 {
+  margin-bottom: 1rem;
+}
+
+.resort-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.resort-controls input,
+.resort-controls select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #c9c9c9;
+  border-radius: 8px;
+  font: inherit;
+  background-color: white;
+}
+
+.resort-controls input:focus,
+.resort-controls select:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .resort-controls {
+    grid-template-columns: 1fr;
+  }
+}
