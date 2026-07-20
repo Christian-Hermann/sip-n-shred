@@ -2,35 +2,41 @@ import "./ResortCard.css";
 
 function ResortCard({ resort }) {
   return (
-    <div className="resort-card">
+    <article className="resort-card">
       <h3>{resort.name}</h3>
-      <p>{resort.newSnow}" New Snow</p>
 
-      <p>
-        <strong>Difficulty: </strong>
-        {resort.difficulty}
+      <p className="snow-total">
+        <span>{resort.newSnow}"</span>
+        New Snow
       </p>
 
-      <p>
-        <strong>Best For: </strong>
-        {resort.bestFor}
-      </p>
+      <div className="resort-details">
+        <p>
+          <strong>Difficulty:</strong>
+          <span>{resort.difficulty}</span>
+        </p>
 
-      <p>
-        <strong>From SLC Airport: </strong>
-        {resort.driveFromAirport} min
-      </p>
+        <p>
+          <strong>Best For:</strong>
+          <span>{resort.bestFor}</span>
+        </p>
 
-      <p>
-        <strong>Terrain Park: </strong>
-        {resort.hasTerrainPark ? "Open Today" : "Closed Today"}
-      </p>
+        <p>
+          <strong>From SLC Airport:</strong>
+          <span>{resort.driveFromAirport} min</span>
+        </p>
 
-      <p>
-        <strong>Après Rating: </strong>
-        {resort.apresRating}/10
-      </p>
-    </div>
+        <p>
+          <strong>Terrain Park:</strong>
+          <span>{resort.hasTerrainPark ? "Open Today" : "Closed Today"}</span>
+        </p>
+
+        <p>
+          <strong>Après Rating:</strong>
+          <span>{resort.apresRating}/10</span>
+        </p>
+      </div>
+    </article>
   );
 }
 
