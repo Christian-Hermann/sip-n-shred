@@ -1,5 +1,6 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import resortRoutes from "./routes/resorts.js";
 
 const app = express();
 
@@ -9,6 +10,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ message: "Sip n' Shred backend is running" });
 });
+
+app.use("/resorts", resortRoutes);
 
 const PORT = 3000;
 
