@@ -42,10 +42,9 @@ function App() {
           Fresh powder. Great après. One place to plan both.
         </p>
 
-        <p>
-          Find the perfect Utah resort based on today's mountain conditions,
-          then discover the best places to eat, drink, and unwind after the
-          lifts close.
+        <p className="app-description">
+          Compare Utah resorts, fresh snow, and après-ski spots. Inspired by 15
+          years of trips to Utah's mountains.
         </p>
       </header>
 

@@ -21,6 +21,13 @@
   line-height: 1.6;
 }
 
+.app-description {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
 @media (max-width: 600px) {
   .app {
     padding: 1.5rem 1rem;

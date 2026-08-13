@@ -1,47 +1,100 @@
+.comparison-section {
+  margin-top: 3rem;
+}
+
+.comparison-title {
+  margin-bottom: 1.25rem;
+}
+
+.comparison-title h2 {
+  margin-bottom: 0.35rem;
+}
+
+.comparison-title p {
+  margin: 0;
+  color: #5f6368;
+}
+
 .comparison-selects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+.comparison-selects label {
   display: flex;
-  justify-content: center;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .comparison-selects select {
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #777;
-  border-radius: 6px;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #c9c9c9;
+  border-radius: 8px;
   background-color: white;
-  font-size: 0.95rem;
+  font: inherit;
+  color: #1f2937;
+}
+
+.comparison-selects select:focus {
+  outline: 2px solid #1f2937;
+  outline-offset: 2px;
 }
 
 .comparison-results {
+  overflow: hidden;
   background-color: white;
-  border: 1px solid #d3d3d3;
-  border-radius: 10px;
-  padding: 1rem;
+  border: 1px solid #dedede;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .comparison-header,
 .comparison-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr;
   align-items: center;
   text-align: center;
 }
 
 .comparison-header {
-  padding: 0.75rem 0 1rem;
+  padding: 1rem;
+  background-color: #f4f5f6;
 }
 
 .comparison-header h3 {
   margin: 0;
+  font-size: 1.05rem;
 }
 
 .comparison-row {
-  border-top: 1px solid #e5e5e5;
-  padding: 0.85rem 0;
+  padding: 0.9rem 1rem;
+  border-top: 1px solid #eeeeee;
 }
 
 .comparison-row strong {
   text-align: left;
-  padding-left: 0.5rem;
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .comparison-selects {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-header,
+  .comparison-row {
+    grid-template-columns: 1.25fr 1fr 1fr;
+    font-size: 0.85rem;
+  }
+
+  .comparison-header,
+  .comparison-row {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }

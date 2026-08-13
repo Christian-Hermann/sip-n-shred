@@ -10,29 +10,40 @@ function ComparisonSection({ resorts }) {
   const secondResort = resorts.find((resort) => resort.id === secondResortId);
 
   return (
-    <section>
-      <h2>Compare Resorts</h2>
+    <section className="comparison-section">
+      <div className="comparison-title">
+        <h2>Compare Resorts</h2>
+        <p>See how two Utah resorts stack up side by side.</p>
+      </div>
+
       <div className="comparison-selects">
-        <select
-          value={firstResortId}
-          onChange={(event) => setFirstResortId(Number(event.target.value))}
-        >
-          {resorts.map((resort) => (
-            <option key={resort.id} value={resort.id}>
-              {resort.name}
-            </option>
-          ))}
-        </select>
-        <select
-          value={secondResortId}
-          onChange={(event) => setSecondResortId(Number(event.target.value))}
-        >
-          {resorts.map((resort) => (
-            <option key={resort.id} value={resort.id}>
-              {resort.name}
-            </option>
-          ))}
-        </select>
+        <label>
+          First Resort
+          <select
+            value={firstResortId}
+            onChange={(event) => setFirstResortId(Number(event.target.value))}
+          >
+            {resorts.map((resort) => (
+              <option key={resort.id} value={resort.id}>
+                {resort.name}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Second Resort
+          <select
+            value={secondResortId}
+            onChange={(event) => setSecondResortId(Number(event.target.value))}
+          >
+            {resorts.map((resort) => (
+              <option key={resort.id} value={resort.id}>
+                {resort.name}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       <div className="comparison-results">
@@ -68,8 +79,8 @@ function ComparisonSection({ resorts }) {
 
         <ComparisonRow
           label="From SLC Airport"
-          firstValue={firstResort.driveFromAirport}
-          secondValue={secondResort.driveFromAirport}
+          firstValue={`${firstResort.driveFromAirport} min`}
+          secondValue={`${secondResort.driveFromAirport} min`}
         />
 
         <ComparisonRow
