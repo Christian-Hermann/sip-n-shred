@@ -30,8 +30,17 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  console.log(req.params);
-  res.json({ messgae: "Check the Terminal!" });
+  const resortId = Number(req.params.id);
+
+  const resort = resorts.find((resort) => {
+    return resort.id === resortId;
+  });
+
+  if (!resort) {
+    return res.status(404).json({ message: "Resort not found" });
+  }
+
+  res.json(resort);
 });
 
 export default router;
