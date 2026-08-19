@@ -1,46 +1,37 @@
 import express from "express";
+import pool from "../db.js";
 
 const router = express.Router();
 
-const resorts = [
-  {
-    id: 1,
-    name: "Park City",
-    newSnow: 8,
-    difficulty: "Intermediate",
-    bestFor: "Families",
-    driveFromAirport: 45,
-    hasTerrainPark: true,
-    apresRating: 9,
-  },
-  {
-    id: 2,
-    name: "Deer Valley",
-    newSnow: 8,
-    difficulty: "Intermediate",
-    bestFor: "Luxury",
-    driveFromAirport: 45,
-    hasTerrainPark: false,
-    apresRating: 8,
-  },
-];
-
-router.get("/", (req, res) => {
-  res.json(resorts);
+router.get("/", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM resorts");
+    res.json(result.rows);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
-router.get("/:id", (req, res) => {
-  const resortId = Number(req.params.id);
+router.get("/:id", async (req, res) => {
+  try {
+    const resortId = Number(req.params.id);
 
-  const resort = resorts.find((resort) => {
-    return resort.id === resortId;
-  });
+    const result = await pool.query("SELECT * FROM resorts WHERE id = $1", [
+      resortId,
+    ]);
 
-  if (!resort) {
-    return res.status(404).json({ message: "Resort not found" });
+    const resort = result.rows[0];
+
+    if (!resort) {
+      return res.status(404).json({ message: "Resort not found" });
+    }
+
+    res.json(resort);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Server error" });
   }
-
-  res.json(resort);
 });
 
 export default router;
