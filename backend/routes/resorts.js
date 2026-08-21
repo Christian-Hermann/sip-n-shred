@@ -5,7 +5,18 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM resorts");
+    const result = await pool.query(`
+        SELECT
+          id,
+          name,
+          new_snow AS "newSnow",
+          difficulty,
+          best_for AS "bestFor",
+          drive_from_airport AS "driveFromAirport",
+          has_terrain_park AS "hasTerrainPark",
+          apres_rating AS "apresRating"
+        FROM resorts
+      `);
     res.json(result.rows);
   } catch (error) {
     console.log(error);
@@ -17,9 +28,22 @@ router.get("/:id", async (req, res) => {
   try {
     const resortId = Number(req.params.id);
 
-    const result = await pool.query("SELECT * FROM resorts WHERE id = $1", [
-      resortId,
-    ]);
+    const result = await pool.query(
+      `
+          SELECT
+            id,
+            name,
+            new_snow AS "newSnow",
+            difficulty,
+            best_for AS "bestFor",
+            drive_from_airport AS "driveFromAirport",
+            has_terrain_park AS "hasTerrainPark",
+            apres_rating AS "apresRating"
+          FROM resorts
+          WHERE id = $1
+        `,
+      [resortId]
+    );
 
     const resort = result.rows[0];
 

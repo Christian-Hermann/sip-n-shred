@@ -8,6 +8,9 @@ function ComparisonSection({ resorts }) {
 
   const firstResort = resorts.find((resort) => resort.id === firstResortId);
   const secondResort = resorts.find((resort) => resort.id === secondResortId);
+  if (!firstResort || !secondResort) {
+    return <p>Loading resorts...</p>;
+  }
 
   return (
     <section className="comparison-section">

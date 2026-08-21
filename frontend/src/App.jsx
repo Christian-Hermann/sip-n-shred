@@ -1,13 +1,27 @@
 import "./App.css";
-import resorts from "./data/resorts";
 import ResortList from "./components/ResortList";
 import ComparisonSection from "./components/ComparisonSection";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [resorts, setResorts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filterOption, setFilterOption] = useState("all");
+
+  useEffect(() => {
+    async function fetchResorts() {
+      const response = await fetch("http://localhost:3000/resorts");
+
+      const data = await response.json();
+
+      console.log(data);
+
+      setResorts(data);
+    }
+
+    fetchResorts();
+  }, []);
 
   const filteredResorts = resorts.filter((resort) => {
     const matchesSearch = resort.name
