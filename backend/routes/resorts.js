@@ -58,4 +58,22 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get("/:id/apres", async (req, res) => {
+  try {
+    const resortId = Number(req.params.id);
+
+    const result = await pool.query(
+      `
+      SELECT *
+      FROM apres_spots
+      WHERE resort_id = $1`,
+      [resortId]
+    );
+    res.json(result.rows);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 export default router;
