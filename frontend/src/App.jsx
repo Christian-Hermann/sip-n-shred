@@ -1,10 +1,12 @@
 import "./App.css";
+import ApresList from "./components/ApresList";
 import ResortList from "./components/ResortList";
 import ComparisonSection from "./components/ComparisonSection";
 import { useEffect, useState } from "react";
 
 function App() {
   const [resorts, setResorts] = useState([]);
+  const [apresSpots, setApresSpots] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filterOption, setFilterOption] = useState("all");
@@ -15,12 +17,22 @@ function App() {
 
       const data = await response.json();
 
-      console.log(data);
-
       setResorts(data);
     }
 
     fetchResorts();
+  }, []);
+
+  useEffect(() => {
+    async function fetchApresSpots() {
+      const response = await fetch("http://localhost:3000/resorts/1/apres");
+
+      const data = await response.json();
+
+      setApresSpots(data);
+    }
+
+    fetchApresSpots();
   }, []);
 
   const filteredResorts = resorts.filter((resort) => {
@@ -100,6 +112,7 @@ function App() {
       </section>
 
       <ComparisonSection resorts={resorts} />
+      <ApresList apresSpots={apresSpots} />
     </main>
   );
 }
