@@ -1,10 +1,12 @@
+import ApresCard from "./ApresCard";
+
 function ApresList({ apresSpots }) {
   return (
     <section>
-      <h2>Park City Après Spots</h2>
+      <h2>Après Spots</h2>
 
-      {apresSpots.map((spot) => (
-        <p key={spot.id}>{spot.name}</p>
+      {apresSpots.map((apresSpot) => (
+        <ApresCard key={apresSpot.id} apresSpot={apresSpot} />
       ))}
     </section>
   );
