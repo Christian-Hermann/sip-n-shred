@@ -2,7 +2,7 @@ import ApresCard from "./ApresCard";
 
 function ApresList({ apresSpots }) {
   return (
-    <section>
+    <section className="apres-section">
       <h2>Après Spots</h2>
 
       {apresSpots.map((apresSpot) => (

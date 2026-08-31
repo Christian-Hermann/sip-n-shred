@@ -1,29 +1,38 @@
+import "./ApresCard.css";
+
 function ApresCard({ apresSpot }) {
   return (
-    <article>
-      <h3>{apresSpot.name}</h3>
+    <article className="apres-card">
+      <div className="apres-card-header">
+        <h3>{apresSpot.name}</h3>
+      </div>
+      <div className="apres-details">
+        <p>
+          <strong>Base Area:</strong>
+          <span>{apresSpot.base_area}</span>
+        </p>
 
-      <p>
-        <strong>Base Area:</strong> {apresSpot.base_area}
-      </p>
+        <p>
+          <strong>Disatnce from Base:</strong>
+          <span>{apresSpot.distance_from_base} </span>
+          miles
+        </p>
 
-      <p>
-        <strong>Disatnce from Base:</strong> {apresSpot.distance_from_base}{" "}
-        miles
-      </p>
+        <p>
+          <strong>Price:</strong>
+          <span>{apresSpot.price_range}</span>
+        </p>
 
-      <p>
-        <strong>Price:</strong> {apresSpot.price_range}
-      </p>
+        <p>
+          <strong>Vibe:</strong>
+          <span>{apresSpot.vibe}</span>
+        </p>
 
-      <p>
-        <strong>Vibe:</strong> {apresSpot.vibe}
-      </p>
-
-      <p>
-        <strong>Rating:</strong>
-        {apresSpot.rating}/10
-      </p>
+        <p>
+          <strong>Rating:</strong>
+          <span>{apresSpot.rating}/10</span>
+        </p>
+      </div>
     </article>
   );
 }
