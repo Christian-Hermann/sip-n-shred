@@ -13,9 +13,8 @@ function ApresCard({ apresSpot }) {
         </p>
 
         <p>
-          <strong>Disatnce from Base:</strong>
-          <span>{apresSpot.distance_from_base} </span>
-          miles
+          <strong>Distance from Base:</strong>
+          <span>{apresSpot.distance_from_base} miles</span>
         </p>
 
         <p>

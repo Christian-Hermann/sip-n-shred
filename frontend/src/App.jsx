@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [resorts, setResorts] = useState([]);
   const [apresSpots, setApresSpots] = useState([]);
+  const [selectedApresResortId, setSelectedApresResortId] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filterOption, setFilterOption] = useState("all");
@@ -25,7 +26,9 @@ function App() {
 
   useEffect(() => {
     async function fetchApresSpots() {
-      const response = await fetch("http://localhost:3000/resorts/1/apres");
+      const response = await fetch(
+        `http://localhost:3000/resorts/${selectedApresResortId}/apres`
+      );
 
       const data = await response.json();
 
@@ -33,7 +36,7 @@ function App() {
     }
 
     fetchApresSpots();
-  }, []);
+  }, [selectedApresResortId]);
 
   const filteredResorts = resorts.filter((resort) => {
     const matchesSearch = resort.name
@@ -112,6 +115,18 @@ function App() {
       </section>
 
       <ComparisonSection resorts={resorts} />
+      <select
+        value={selectedApresResortId}
+        onChange={(event) =>
+          setSelectedApresResortId(Number(event.target.value))
+        }
+      >
+        {resorts.map((resort) => (
+          <option key={resort.id} value={resort.id}>
+            {resort.name}
+          </option>
+        ))}
+      </select>
       <ApresList apresSpots={apresSpots} />
     </main>
   );
