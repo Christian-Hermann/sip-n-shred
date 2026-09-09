@@ -115,6 +115,7 @@ function App() {
       </section>
 
       <ComparisonSection resorts={resorts} />
+
       <select
         value={selectedApresResortId}
         onChange={(event) =>
