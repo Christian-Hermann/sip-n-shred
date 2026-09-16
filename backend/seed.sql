@@ -83,11 +83,38 @@ VALUES
   9
 ),
 (
-  'The Spur Bar & Grill',
+  'Pig Pen Saloon',
   1,
-  'Town Lift / Main Street',
-  0.2,
+  'Park City Mountain Village',
+  0.0,
+  '$',
+  'Casual, lively, slopeside ski-bar vibe',
+  8
+),
+(
+  'Troll Hallen',
+  2,
+  'Silver Lake',
+  0.0,
+  '$$$',
+  'Upscale, relaxed, classic Deer Valley apres',
+  9
+),
+(
+  'The Sticky Wicket',
+  2,
+  'Silver Lake',
+  0.0,
   '$$',
-  'Live music, energetic, late-night feel',
+  'Vintage ski bar, lively, casual apres atmosphere',
+  8
+),
+(
+  'Edgar''s Apres',
+  2,
+  'Snow Park',
+  0.0,
+  '$$',
+  'Casual, lively, slopeside apres with food and drinks',
   8
 );
