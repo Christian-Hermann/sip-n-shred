@@ -115,20 +115,12 @@ function App() {
       </section>
 
       <ComparisonSection resorts={resorts} />
-
-      <select
-        value={selectedApresResortId}
-        onChange={(event) =>
-          setSelectedApresResortId(Number(event.target.value))
-        }
-      >
-        {resorts.map((resort) => (
-          <option key={resort.id} value={resort.id}>
-            {resort.name}
-          </option>
-        ))}
-      </select>
-      <ApresList apresSpots={apresSpots} />
+      <ApresList
+        apresSpots={apresSpots}
+        resorts={resorts}
+        selectedApresResortId={selectedApresResortId}
+        setSelectedApresResortId={setSelectedApresResortId}
+      />
     </main>
   );
 }
