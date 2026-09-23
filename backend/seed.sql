@@ -117,4 +117,85 @@ VALUES
   '$$',
   'Casual, lively, slopeside apres with food and drinks',
   8
+),
+(
+  'The Forklift',
+  3,
+  'Snowbird Center / Plaza Deck',
+  0.0,
+  '$$',
+  'Bustling, casual, slopeside apres with a sunny deck',
+  8
+),
+(
+  'SeventyOne Lounge',
+  3,
+  'The Cliff Lodge',
+  0.0,
+  '$$',
+  'Retro-cool lounge with apres bites and drinks',
+  8
+),
+(
+  'The Atrium',
+  3,
+  'The Cliff Lodge',
+  0.0,
+  '$$',
+  'Relaxed lodge atmosphere with live apres music',
+  8
+),
+(
+  'The Powder Keg',
+  4,
+  'Timberline Lodge',
+  0.0,
+  '$$',
+  'Lively mountain pub with local beer, food, and live music',
+  9
+),
+(
+  'Lucky Slice',
+  4,
+  'Sundown Lodge',
+  0.0,
+  '$',
+  'Casual slopeside pizza and drinks with night skiing',
+  7
+),
+(
+  'Hidden Lake Lodge',
+  4,
+  'Hidden Lake',
+  0.0,
+  '$$',
+  'Relaxed mountain lodge with food, drinks, and panoramic views',
+  7
+),
+(
+  'Owl Bar',
+  5,
+  'Sundance Resort Village',
+  0.0,
+  '$$',
+  'Historic western bar with cocktails, bar food, and live music',
+  9
+),
+(
+  'Foundry Grill',
+  5,
+  'Sundance Resort Village',
+  0.0,
+  '$$$',
+  'Rustic upscale dining with hearty mountain comfort food',
+  8
+),
+(
+  'Library Lounge',
+  5,
+  'Sundance Resort Village',
+  0.0,
+  '$$$',
+  'Intimate upscale lounge with handcrafted cocktails and small plates',
+  8
 );
