@@ -8,6 +8,7 @@ function App() {
   const [resorts, setResorts] = useState([]);
   const [apresSpots, setApresSpots] = useState([]);
   const [selectedApresResortId, setSelectedApresResortId] = useState(1);
+  const [parkCityWeather, setParkCityWeather] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filterOption, setFilterOption] = useState("all");
@@ -37,6 +38,20 @@ function App() {
 
     fetchApresSpots();
   }, [selectedApresResortId]);
+
+  useEffect(() => {
+    async function fetchParkCityWeather() {
+      const response = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=40.65&longitude=-111.51&current=temperature_2m,weather_code&temperature_unit=fahrenheit"
+      );
+
+      const data = await response.json();
+
+      setParkCityWeather(data.current);
+    }
+
+    fetchParkCityWeather();
+  }, []);
 
   const filteredResorts = resorts.filter((resort) => {
     const matchesSearch = resort.name
