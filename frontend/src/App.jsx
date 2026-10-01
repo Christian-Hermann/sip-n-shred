@@ -126,7 +126,7 @@ function App() {
           </select>
         </div>
 
-        <ResortList resorts={sortedResorts} />
+        <ResortList resorts={sortedResorts} parkCityWeather={parkCityWeather} />
       </section>
 
       <ComparisonSection resorts={resorts} />

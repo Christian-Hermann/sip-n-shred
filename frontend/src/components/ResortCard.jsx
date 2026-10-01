@@ -1,14 +1,11 @@
 import "./ResortCard.css";
 
-function ResortCard({ resort }) {
+function ResortCard({ resort, weather }) {
   return (
     <article className="resort-card">
       <h3>{resort.name}</h3>
 
-      <p className="snow-total">
-        <span>{resort.newSnow}"</span>
-        New Snow
-      </p>
+      {weather && <p>Current Temperature: {weather.temperature_2m}°F</p>}
 
       <div className="resort-details">
         <p>
