@@ -9,6 +9,8 @@ router.get("/", async (req, res) => {
         SELECT
           id,
           name,
+          latitude,
+          longitude,
           new_snow AS "newSnow",
           difficulty,
           best_for AS "bestFor",

@@ -1,5 +1,7 @@
 INSERT INTO resorts (
-  name,
+  name,  
+  latitude,
+  longitude,
   new_snow,
   difficulty,
   best_for,
@@ -10,6 +12,8 @@ INSERT INTO resorts (
 VALUES
 (
   'Park City',
+  40.65,
+  -111.51,
   8,
   'Intermediate',
   'Families',
@@ -19,6 +23,8 @@ VALUES
 ),
 (
   'Deer Valley',
+  40.64,
+  -111.48,
   8,
   'Intermediate',
   'Luxury',
@@ -28,6 +34,8 @@ VALUES
 ),
 (
   'Snowbird',
+  40.58,
+  -111.66,
   14,
   'Expert',
   'Advanced Riders',
@@ -37,6 +45,8 @@ VALUES
 ),
 (
   'Powder Mountain',
+  41.38,
+  -111.78,
   12,
   'Intermediate',
   'Powder',
@@ -46,6 +56,8 @@ VALUES
 ),
 (
   'Sundance',
+  40.39,
+  -111.58,
   6,
   'Beginner',
   'Scenery',

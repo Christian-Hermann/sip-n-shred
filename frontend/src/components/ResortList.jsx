@@ -1,13 +1,13 @@
 import ResortCard from "./ResortCard";
 
-function ResortList({ resorts, parkCityWeather }) {
+function ResortList({ resorts, weatherByResort }) {
   return (
     <>
       {resorts.map((resort) => (
         <ResortCard
           key={resort.id}
           resort={resort}
-          weather={resort.id === 1 ? parkCityWeather : null}
+          weather={weatherByResort[resort.id]}
         />
       ))}
     </>

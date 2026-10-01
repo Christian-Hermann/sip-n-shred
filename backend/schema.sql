@@ -1,6 +1,8 @@
 CREATE TABLE resorts (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
+  latitude DECIMAL(8, 5),
+  longitude DECIMAL(8, 5),
   new_snow INTEGER,
   difficulty VARCHAR(50),
   best_for VARCHAR(100),

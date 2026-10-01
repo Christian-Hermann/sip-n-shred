@@ -8,7 +8,7 @@ function App() {
   const [resorts, setResorts] = useState([]);
   const [apresSpots, setApresSpots] = useState([]);
   const [selectedApresResortId, setSelectedApresResortId] = useState(1);
-  const [parkCityWeather, setParkCityWeather] = useState(null);
+  const [weatherByResort, setWeatherByResort] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filterOption, setFilterOption] = useState("all");
@@ -40,18 +40,24 @@ function App() {
   }, [selectedApresResortId]);
 
   useEffect(() => {
-    async function fetchParkCityWeather() {
-      const response = await fetch(
-        "https://api.open-meteo.com/v1/forecast?latitude=40.65&longitude=-111.51&current=temperature_2m,weather_code&temperature_unit=fahrenheit"
-      );
+    async function fetchWeather() {
+      const weatherData = {};
 
-      const data = await response.json();
+      for (const resort of resorts) {
+        const response = await fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${resort.latitude}&longitude=${resort.longitude}&current=temperature_2m,weather_code&temperature_unit=fahrenheit`
+        );
 
-      setParkCityWeather(data.current);
+        const data = await response.json();
+
+        weatherData[resort.id] = data.current;
+      }
+
+      setWeatherByResort(weatherData);
     }
 
-    fetchParkCityWeather();
-  }, []);
+    fetchWeather();
+  }, [resorts]);
 
   const filteredResorts = resorts.filter((resort) => {
     const matchesSearch = resort.name
@@ -126,7 +132,7 @@ function App() {
           </select>
         </div>
 
-        <ResortList resorts={sortedResorts} parkCityWeather={parkCityWeather} />
+        <ResortList resorts={sortedResorts} weatherByResort={weatherByResort} />
       </section>
 
       <ComparisonSection resorts={resorts} />
