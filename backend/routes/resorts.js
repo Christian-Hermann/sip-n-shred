@@ -11,7 +11,6 @@ router.get("/", async (req, res) => {
           name,
           latitude,
           longitude,
-          new_snow AS "newSnow",
           difficulty,
           best_for AS "bestFor",
           drive_from_airport AS "driveFromAirport",
@@ -35,7 +34,6 @@ router.get("/:id", async (req, res) => {
           SELECT
             id,
             name,
-            new_snow AS "newSnow",
             difficulty,
             best_for AS "bestFor",
             drive_from_airport AS "driveFromAirport",

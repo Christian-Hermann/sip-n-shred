@@ -57,12 +57,6 @@ function ComparisonSection({ resorts }) {
         </div>
 
         <ComparisonRow
-          label="New Snow"
-          firstValue={`${firstResort.newSnow}"`}
-          secondValue={`${secondResort.newSnow}"`}
-        />
-
-        <ComparisonRow
           label="Difficulty"
           firstValue={firstResort.difficulty}
           secondValue={secondResort.difficulty}

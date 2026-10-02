@@ -73,9 +73,6 @@ function App() {
   });
 
   const sortedResorts = [...filteredResorts];
-  if (sortOption === "snow") {
-    sortedResorts.sort((a, b) => b.newSnow - a.newSnow);
-  }
   if (sortOption === "airport") {
     sortedResorts.sort((a, b) => a.driveFromAirport - b.driveFromAirport);
   }
@@ -126,7 +123,6 @@ function App() {
             onChange={(event) => setSortOption(event.target.value)}
           >
             <option value="">Default Order</option>
-            <option value="snow">Most New Snow</option>
             <option value="airport">Closest to Airport</option>
             <option value="alphabetical">A – Z</option>
           </select>
