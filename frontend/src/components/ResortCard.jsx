@@ -1,11 +1,17 @@
 import "./ResortCard.css";
+import { getWeatherDescription } from "../utils/weather";
 
 function ResortCard({ resort, weather }) {
   return (
     <article className="resort-card">
       <h3>{resort.name}</h3>
 
-      {weather && <p>Current Temperature: {weather.temperature_2m}°F</p>}
+      {weather && (
+        <div className="weather">
+          <p>Current Temperature: {weather.temperature_2m}°F</p>
+          <p>Conditions: {getWeatherDescription(weather.weather_code)}</p>
+        </div>
+      )}
 
       <div className="resort-details">
         <p>
