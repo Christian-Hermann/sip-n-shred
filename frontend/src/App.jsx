@@ -12,16 +12,24 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filterOption, setFilterOption] = useState("all");
+  const [resortError, setResortError] = useState("");
 
   useEffect(() => {
     async function fetchResorts() {
-      const response = await fetch("http://localhost:3000/resorts");
+      try {
+        const response = await fetch("http://localhost:3000/resorts");
 
-      const data = await response.json();
+        if (!response.ok) {
+          throw new Error("Failed to fetch resorts");
+        }
 
-      setResorts(data);
+        const data = await response.json();
+        setResorts(data);
+      } catch (error) {
+        console.log(error);
+        setResortError("Unable to load resort data.");
+      }
     }
-
     fetchResorts();
   }, []);
 
@@ -103,6 +111,8 @@ function App() {
 
       <section id="conditions" className="conditions-section">
         <h2>Today's Conditions</h2>
+
+        {resortError && <p className="error-message">{resortError}</p>}
 
         <div className="resort-controls">
           <input
