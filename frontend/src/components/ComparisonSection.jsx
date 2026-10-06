@@ -13,7 +13,7 @@ function ComparisonSection({ resorts }) {
   }
 
   return (
-    <section className="comparison-section">
+    <section id="comparison" className="comparison-section">
       <div className="comparison-title">
         <h2>Compare Resorts</h2>
         <p>See how two Utah resorts stack up side by side.</p>

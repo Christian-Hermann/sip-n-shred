@@ -85,3 +85,25 @@
     grid-template-columns: 1fr;
   }
 }
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  padding: 0.7rem 1.1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: white;
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  background-color: #f3f4f6;
+}

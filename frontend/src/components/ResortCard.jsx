@@ -8,8 +8,15 @@ function ResortCard({ resort, weather }) {
 
       {weather && (
         <div className="weather">
-          <p>Current Temperature: {weather.temperature_2m}°F</p>
-          <p>Conditions: {getWeatherDescription(weather.weather_code)}</p>
+          <p>
+            <strong>Current Temperature: </strong>
+            <span>{weather.temperature_2m} °F</span>
+          </p>
+
+          <p>
+            <strong>Conditions: </strong>
+            <span>{getWeatherDescription(weather.weather_code)}</span>
+          </p>
         </div>
       )}
 
@@ -31,7 +38,7 @@ function ResortCard({ resort, weather }) {
 
         <p>
           <strong>Terrain Park:</strong>
-          <span>{resort.hasTerrainPark ? "Open Today" : "Closed Today"}</span>
+          <span>{resort.hasTerrainPark ? "Yes" : "No"}</span>
         </p>
 
         <p>

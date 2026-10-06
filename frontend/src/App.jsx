@@ -86,16 +86,22 @@ function App() {
         <h1>Sip n' Shred</h1>
 
         <p className="app-tagline">
-          Fresh powder. Great après. One place to plan both.
+          Mountain conditions. Great après. One place to plan both.
         </p>
 
         <p className="app-description">
-          Compare Utah resorts, fresh snow, and après-ski spots. Inspired by 15
-          years of trips to Utah's mountains.
+          Compare Utah resorts, live weather, and après-ski spots. Inspired by
+          15 years of trips to Utah's mountains.
         </p>
       </header>
 
-      <section className="conditions-section">
+      <nav className="main-nav">
+        <a href="#conditions">Conditions</a>
+        <a href="#comparison">Compare Resorts</a>
+        <a href="#apres">Après</a>
+      </nav>
+
+      <section id="conditions" className="conditions-section">
         <h2>Today's Conditions</h2>
 
         <div className="resort-controls">

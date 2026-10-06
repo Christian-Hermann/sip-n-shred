@@ -7,7 +7,7 @@ function ApresList({
   setSelectedApresResortId,
 }) {
   return (
-    <section className="apres-section">
+    <section id="apres" className="apres-section">
       <h2>Après Spots</h2>
 
       <select
