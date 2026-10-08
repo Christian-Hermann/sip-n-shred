@@ -5,6 +5,8 @@ import ComparisonSection from "./components/ComparisonSection";
 import { useEffect, useState } from "react";
 
 function App() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [resorts, setResorts] = useState([]);
   const [apresSpots, setApresSpots] = useState([]);
   const [selectedApresResortId, setSelectedApresResortId] = useState(1);
@@ -17,7 +19,7 @@ function App() {
   useEffect(() => {
     async function fetchResorts() {
       try {
-        const response = await fetch("http://localhost:3000/resorts");
+        const response = await fetch(`${API_URL}/resorts`);
 
         if (!response.ok) {
           throw new Error("Failed to fetch resorts");
@@ -36,7 +38,7 @@ function App() {
   useEffect(() => {
     async function fetchApresSpots() {
       const response = await fetch(
-        `http://localhost:3000/resorts/${selectedApresResortId}/apres`
+        `${API_URL}/resorts/${selectedApresResortId}/apres`
       );
 
       const data = await response.json();
