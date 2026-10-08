@@ -5,8 +5,7 @@ Sip n' Shred is a full-stack web application for comparing Utah ski resorts, che
 I created this project after years of family ski trips to Utah. I wanted to build something that could actually be useful when deciding where to ski or snowboard and where to go afterward.
 
 Live Site:
-
-[ADD DEPLOYED URL HERE]
+https://sip-n-shred-utah.netlify.app/
 
 Users can:
 
